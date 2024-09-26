@@ -1,0 +1,164 @@
+<body>
+
+    <title>Fun Animated Card</title>
+    <div class="card">
+        <div class="card-content">
+            <h2 class="card-title">Comptes Commun</h2>
+            <p class="card-body">Comptes Commun 2024</p>
+            <a href="https://www.notion.so/Vignoble-R-cap-1083990f6940801f9a49fa8c34c27eb8" target="_blank" class="button">2024</a>
+        </div>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+
+        }
+
+        /* html,
+        body {
+            height: 100%;
+            font-family: Roboto, sans-serif;
+        } */
+
+        :root {
+            --clr-netural-900: rgb(44, 49, 53);
+            --clr-netural-100: white;
+            --clr-accent-400: #43CDC4;
+        }
+
+        *,
+        *::befor *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            place-items: center;
+            line-height: 1.6;
+            /* background: var(--clr-netural-900); */
+            font-family: Arial, san-serif;
+        }
+
+        .card {
+            color: var(--clr-netural-100);
+            background-image: url(/grappe01.jpg);
+            background-size: cover;
+            padding: 11rem 0 0;
+            max-width: 35ch;
+            border-radius: 0.7rem;
+            overflow: hidden;
+            border-style: solid;
+            border-width: 2px;
+
+            transition: transform 500ms ease;
+        }
+
+        .card:hover,
+        .card:focus-within {
+            transform: scale(1.13);
+        }
+
+        .card-content {
+            --padding: 1.5rem;
+            padding: var(--padding);
+            background: linear-gradient(hsl(0 0% 0% / 0),
+                    hsl(20 0% 0% / 0.3) 20%,
+                    hsl(0 0% 0% / 1));
+        }
+
+        .card-title {
+            position: relative;
+            width: max-content;
+            need this for help to lineup (o)utline: (px? solid? red?) (delete after)
+        }
+
+        .card-title::after {
+            content: "";
+            position: absolute;
+            background: var(--clr-accent-400);
+            height: 4px;
+            width: calc(100% + var(--padding));
+            left: calc(var(--padding) * -1);
+            bottom: -1px;
+
+            transform-origin: left;
+            transition: transform 500ms ease;
+        }
+
+        .card:hover .card-title::after,
+        .card:focus-within .card-title::after {
+            transform: scaleX(1);
+        }
+
+        .card-body {
+            color: rgb(255 255 255 / 0.9)
+        }
+
+        .button {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--clr-netural-900);
+            background-color: var(--clr-accent-400);
+            padding: 0.5em 1.25em;
+            border-radius: 0.25rem border: 10px;
+        }
+
+        .button:hover,
+        .button:focus {
+            background-color: var(--clr-netural-100)
+        }
+
+        @media (hover) {
+
+            .card-content {
+                transform: translateY(65%);
+                transition: transform 500ms ease;
+            }
+
+            .card:hover .card-content,
+            .card:focus-within .card-content {
+                transform: translateY(0%);
+                transition-delay: 500ms;
+            }
+
+            .card:focus-within .card-content {
+                transition-duration: 0ms;
+            }
+
+            .card-content>*:not(.card-title) {
+                opacity: 0;
+                transition: opacity 500ms linear;
+            }
+
+            .card:hover .card-content>*:not(.card-title),
+            .card:focus-within .card-content>*:not(.card-title) {
+                opacity: 1;
+                transition-delay: 1000ms;
+            }
+
+            .card-title::after {
+                transform: scaleX(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+                transition-delay: 0ms !important;
+            }
+        }
+    </style>
+</body>
